@@ -6,11 +6,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest]
+        os: [macos-latest]
         build_type: [Release]
         enable_ui: [on]
         include:
-          - os: windows-latest
+          - os: macos-latest
             build_type: Release
             enable_ui: on
     steps:
@@ -60,4 +60,4 @@ jobs:
         name: aseprite
         path: |
           D:/a/aseprite/aseprite/build/bin/data
-          D:/a/aseprite/aseprite/build/bin/aseprite.exe
+          D:/a/aseprite/aseprite/build/bin/aseprite.dmg
