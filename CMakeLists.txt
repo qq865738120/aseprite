@@ -351,9 +351,10 @@ message(STATUS "aaaaaaa2: ${LAF_BACKEND}")
 if(ENABLE_WEBP)
   # Use libwebp from Skia
   if(LAF_BACKEND STREQUAL "skia")
-    find_library(WEBP_LIBRARIES webp
-      NAMES libwebp # required for Windows
-      PATHS "${SKIA_LIBRARY_DIR}" NO_DEFAULT_PATH)
+    #find_library(WEBP_LIBRARIES webp
+      #NAMES libwebp # required for Windows
+      #PATHS "${SKIA_LIBRARY_DIR}" NO_DEFAULT_PATH)
+    set(WEBP_LIBRARIES "${SKIA_LIBRARY_DIR}/libwebp.a") 
     set(WEBP_INCLUDE_DIR "${SKIA_DIR}/third_party/externals/libwebp/src")
   else()
     set(WEBP_LIBRARIES webp webpdemux libwebpmux)
