@@ -346,14 +346,18 @@ endif()
 add_subdirectory(laf)
 
 # libwebp
+message(STATUS "aaaaaaa1: ${ENABLE_WEBP}")
+message(STATUS "aaaaaaa2: ${LAF_BACKEND}")
 if(ENABLE_WEBP)
   # Use libwebp from Skia
   if(LAF_BACKEND STREQUAL "skia")
+    message(STATUS "aaaaaaa3: ${LAF_BACKEND}")
     find_library(WEBP_LIBRARIES webp
       NAMES libwebp # required for Windows
       PATHS "${SKIA_LIBRARY_DIR}" NO_DEFAULT_PATH)
     set(WEBP_INCLUDE_DIR "${SKIA_DIR}/third_party/externals/libwebp/src")
   else()
+    message(STATUS "aaaaaaa4: ${WEBP_LIBRARIES}")
     set(WEBP_LIBRARIES webp webpdemux libwebpmux)
     set(WEBP_INCLUDE_DIR ${LIBWEBP_DIR}/src)
   endif()
